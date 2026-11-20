@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://belf41xs5ac2l"]
+
+[ext_resource type="Script" uid="uid://dgtaqodl8tj1s" path="res://scripts/obstacle.gd" id="1_twuwq"]
+[ext_resource type="Texture2D" uid="uid://bcs3llmdhwyog" path="res://character/pixil-frame-0 (9).png" id="2_twuwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cfvr"]
+size = Vector2(20.327847, 152.77348)
+
+[node name="obstacle" type="Area2D" unique_id=1553624690 groups=["obstacles"]]
+script = ExtResource("1_twuwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=622092445]
+position = Vector2(0, 1)
+scale = Vector2(7.5, 8.02)
+texture = ExtResource("2_twuwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=176680142]
+position = Vector2(28.875887, 53.26689)
+rotation = -0.74585813
+scale = Vector2(-4.694202, -0.7300591)
+shape = SubResource("RectangleShape2D_3cfvr")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1806390210]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
